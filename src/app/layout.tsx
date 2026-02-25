@@ -61,6 +61,11 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
           rel="stylesheet"
         />
+        <script
+          defer
+          src="https://analytics.alk.pw/script.js"
+          data-website-id="7b643f91-c7a6-4aa7-9978-b0b3134bb69f"
+        />
       </head>
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
