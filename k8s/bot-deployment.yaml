@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: never-ending-bot
+  namespace: never-ending
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: never-ending-bot
+  template:
+    metadata:
+      labels:
+        app: never-ending-bot
+    spec:
+      containers:
+        - name: bot
+          image: registry.alk.pw/never-ending/bot:latest
+          imagePullPolicy: IfNotPresent
+          envFrom:
+            - secretRef:
+                name: never-ending-secrets
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "50m"
+            limits:
+              memory: "256Mi"
+              cpu: "250m"
