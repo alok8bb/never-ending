@@ -2,6 +2,7 @@
 
 import type { Article } from "@/lib/db/schema";
 import { ArticleCard } from "./article-card";
+import { AnimateOnScroll } from "./animate-on-scroll";
 import { useView } from "./view-provider";
 
 export function ArticleList({ articles }: { articles: Article[] }) {
@@ -17,9 +18,13 @@ export function ArticleList({ articles }: { articles: Article[] }) {
 
   if (view === "expanded") {
     return (
-      <div className="flex flex-col gap-6">
+      <div className="sm:columns-2 gap-6 space-y-6">
         {articles.map((article, i) => (
-          <ArticleCard key={article.id} article={article} index={i} />
+          <AnimateOnScroll key={article.id} delay={(i % 6) * 50}>
+            <div className="break-inside-avoid">
+              <ArticleCard article={article} index={i} />
+            </div>
+          </AnimateOnScroll>
         ))}
       </div>
     );
@@ -28,7 +33,9 @@ export function ArticleList({ articles }: { articles: Article[] }) {
   return (
     <div className="divide-y divide-stone-200/60 dark:divide-stone-800/50">
       {articles.map((article, i) => (
-        <ArticleCard key={article.id} article={article} index={i} />
+        <AnimateOnScroll key={article.id} delay={(i % 6) * 50}>
+          <ArticleCard article={article} index={i} />
+        </AnimateOnScroll>
       ))}
     </div>
   );

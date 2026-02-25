@@ -27,25 +27,25 @@ export function Pagination({ page, totalPages }: PaginationProps) {
   }
 
   return (
-    <div className="flex items-center justify-center gap-1 pt-10 animate-fade-in">
+    <div className="flex items-center justify-center gap-1 pt-8 pb-16 animate-fade-in">
       <button
         onClick={() => goToPage(page - 1)}
         disabled={page <= 1}
-        className="rounded-md px-3 py-1.5 text-xs text-stone-500 hover:bg-stone-100 hover:text-stone-900 dark:hover:bg-stone-800 dark:hover:text-stone-100 disabled:opacity-30 disabled:hover:bg-transparent transition-colors"
+        className="cursor-pointer rounded-md px-3 py-2 text-sm text-stone-500 hover:bg-stone-100 hover:text-stone-900 dark:hover:bg-stone-800 dark:hover:text-stone-100 disabled:opacity-30 disabled:cursor-default disabled:hover:bg-transparent transition-colors"
       >
-        prev
+        Previous
       </button>
 
       {start > 1 && (
         <>
           <button
             onClick={() => goToPage(1)}
-            className="rounded-md px-2.5 py-1.5 text-xs text-stone-500 hover:bg-stone-100 hover:text-stone-900 dark:hover:bg-stone-800 dark:hover:text-stone-100 transition-colors"
+            className="cursor-pointer rounded-md px-3 py-2 text-sm text-stone-500 hover:bg-stone-100 hover:text-stone-900 dark:hover:bg-stone-800 dark:hover:text-stone-100 transition-colors"
           >
             1
           </button>
           {start > 2 && (
-            <span className="px-1 text-xs text-stone-400">…</span>
+            <span className="px-1 text-sm text-stone-400">…</span>
           )}
         </>
       )}
@@ -54,9 +54,9 @@ export function Pagination({ page, totalPages }: PaginationProps) {
         <button
           key={p}
           onClick={() => goToPage(p)}
-          className={`rounded-md px-2.5 py-1.5 text-xs transition-colors ${
+          className={`cursor-pointer rounded-md px-3 py-2 text-sm transition-colors ${
             p === page
-              ? "bg-stone-200 dark:bg-stone-800 font-medium text-stone-900 dark:text-stone-100"
+              ? "bg-stone-900 text-white dark:bg-stone-100 dark:text-stone-900 font-medium"
               : "text-stone-500 hover:bg-stone-100 hover:text-stone-900 dark:hover:bg-stone-800 dark:hover:text-stone-100"
           }`}
         >
@@ -67,11 +67,11 @@ export function Pagination({ page, totalPages }: PaginationProps) {
       {end < totalPages && (
         <>
           {end < totalPages - 1 && (
-            <span className="px-1 text-xs text-stone-400">…</span>
+            <span className="px-1 text-sm text-stone-400">…</span>
           )}
           <button
             onClick={() => goToPage(totalPages)}
-            className="rounded-md px-2.5 py-1.5 text-xs text-stone-500 hover:bg-stone-100 hover:text-stone-900 dark:hover:bg-stone-800 dark:hover:text-stone-100 transition-colors"
+            className="cursor-pointer rounded-md px-3 py-2 text-sm text-stone-500 hover:bg-stone-100 hover:text-stone-900 dark:hover:bg-stone-800 dark:hover:text-stone-100 transition-colors"
           >
             {totalPages}
           </button>
@@ -81,9 +81,9 @@ export function Pagination({ page, totalPages }: PaginationProps) {
       <button
         onClick={() => goToPage(page + 1)}
         disabled={page >= totalPages}
-        className="rounded-md px-3 py-1.5 text-xs text-stone-500 hover:bg-stone-100 hover:text-stone-900 dark:hover:bg-stone-800 dark:hover:text-stone-100 disabled:opacity-30 disabled:hover:bg-transparent transition-colors"
+        className="cursor-pointer rounded-md px-3 py-2 text-sm text-stone-500 hover:bg-stone-100 hover:text-stone-900 dark:hover:bg-stone-800 dark:hover:text-stone-100 disabled:opacity-30 disabled:cursor-default disabled:hover:bg-transparent transition-colors"
       >
-        next
+        Next
       </button>
     </div>
   );

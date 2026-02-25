@@ -24,13 +24,13 @@ export function ThemeToggle() {
     localStorage.setItem("theme", next ? "dark" : "light");
   }
 
-  if (!mounted) return <div className="size-9" />;
+  if (!mounted) return <div className="size-5" />;
 
   return (
     <button
       onClick={toggle}
       aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
-      className="rounded-lg p-2 text-stone-500 transition-colors hover:bg-stone-100 hover:text-stone-900 dark:hover:bg-stone-800 dark:hover:text-stone-100"
+      className="cursor-pointer text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors"
     >
       {dark ? (
         <svg className="size-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
