@@ -14,8 +14,38 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://reads.alk.pw"),
   title: "Never Ending",
-  description: "articles we come across, and find interesting",
+  description: "Things worth reading, curated by Shreyansh & Alok",
+  openGraph: {
+    type: "website",
+    siteName: "Never Ending",
+    url: "https://reads.alk.pw",
+    title: "Never Ending",
+    description: "Things worth reading, curated by Shreyansh & Alok",
+    images: [
+      {
+        url: "https://reads.alk.pw/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Never Ending",
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Never Ending",
+    description: "Things worth reading, curated by Shreyansh & Alok",
+    images: [
+      {
+        url: "https://reads.alk.pw/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Never Ending",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

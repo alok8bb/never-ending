@@ -26,6 +26,7 @@
     "telegram": "^2.26.22"
   },
   "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/pg": "^8.16.0",
@@ -34,6 +35,7 @@
     "drizzle-kit": "^0.31.9",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "satori": "^0.19.2",
     "tailwindcss": "^4",
     "typescript": "^5"
   },
