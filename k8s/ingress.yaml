@@ -10,8 +10,21 @@ spec:
     - hosts:
         - reads.alk.pw
       secretName: reads-alk-pw-tls
+    - hosts:
+        - never-ending.space
+      secretName: never-ending-space-tls
   rules:
     - host: reads.alk.pw
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: never-ending-web
+                port:
+                  number: 3000
+    - host: never-ending.space
       http:
         paths:
           - path: /
